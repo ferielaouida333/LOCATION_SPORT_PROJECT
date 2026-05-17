@@ -115,3 +115,4 @@ $categories = $dao->getAll();
 </body>
 </html>
 
+
