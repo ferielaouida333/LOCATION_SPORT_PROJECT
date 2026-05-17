@@ -102,3 +102,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="../js/validation.js"></script>
 </body>
 </html>
+
