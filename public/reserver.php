@@ -157,3 +157,4 @@ document.getElementById('date_fin').addEventListener('change', calculerPrix);
 </body>
 </html>
 
+
