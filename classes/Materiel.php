@@ -1,18 +1,35 @@
 <?php
 
-
 class Materiel {
+    private int    $id;
+    private string $nom;
+    private string $description;
+    private float  $prix_jour;
+    private string $photo;
+    private int    $disponible;
+    private int    $categorie_id;
+    private string $categorie_nom = '';
 
     public function __construct(
-        private int    $id           = 0,
-        private string $nom          = '',
-        private string $description  = '',
-        private float  $prix_jour    = 0.0,
-        private string $photo        = 'default.jpg',
-        private int    $disponible   = 1,   // 1=disponible, 0=non disponible
-        private int    $categorie_id = 0
-    ) {}
-
+        int    $id           = 0,
+        string $nom          = '',
+        string $description  = '',
+        float  $prix_jour    = 0.0,
+        string $photo        = 'default.jpg',
+        int    $disponible   = 1,
+        int    $categorie_id = 0,
+        string $categorie_nom = ''
+    ) {
+        // Only set if not already set by PDO
+        if (!isset($this->id))           $this->id           = $id;
+        if (!isset($this->nom))          $this->nom          = $nom;
+        if (!isset($this->description))  $this->description  = $description;
+        if (!isset($this->prix_jour))    $this->prix_jour    = $prix_jour;
+        if (!isset($this->photo))        $this->photo        = $photo;
+        if (!isset($this->disponible))   $this->disponible   = $disponible;
+        if (!isset($this->categorie_id)) $this->categorie_id = $categorie_id;
+        if (empty($this->categorie_nom)) $this->categorie_nom = $categorie_nom;
+    }
 
     public function getId(): int          { return $this->id; }
     public function getNom(): string      { return $this->nom; }
@@ -21,15 +38,5 @@ class Materiel {
     public function getPhoto(): string    { return $this->photo; }
     public function isDisponible(): int   { return $this->disponible; }
     public function getCategorieId(): int { return $this->categorie_id; }
-
-
-
-    public function setNom(string $nom): void              { $this->nom = $nom; }
-    public function setDescription(string $d): void        { $this->description = $d; }
-    public function setPrixJour(float $p): void            { $this->prix_jour = $p; }
-    public function setPhoto(string $photo): void          { $this->photo = $photo; }
-    public function setDisponible(int $d): void            { $this->disponible = $d; }
-    public function setCategorieId(int $id): void          { $this->categorie_id = $id; }
+    public function getCategorieNom(): string { return $this->categorie_nom; }
 }
-
-
