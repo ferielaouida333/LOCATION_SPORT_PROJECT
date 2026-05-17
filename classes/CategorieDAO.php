@@ -55,7 +55,7 @@ class CategorieDAO {
         }
     }
 
-   -
+   
     public function delete(int $id): bool {
         $stmt = $this->pdo->prepare("DELETE FROM categorie WHERE id = ?");
         return $stmt->execute([$id]);
