@@ -244,7 +244,6 @@ if (!empty($_GET['q'])) {
 
 </body>
 </html>
-
 ~
 ~
 ~
