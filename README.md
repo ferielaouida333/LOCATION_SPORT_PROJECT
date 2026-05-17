@@ -3,7 +3,7 @@
 Projet PHP/PDO orienté objet réalisé en groupe de 3.
 
 **Groupe :** Feriel · Houssem · Zeineb
-**Année :** 2024-2025
+**Année :** 2025-2026
 
 ---
 
